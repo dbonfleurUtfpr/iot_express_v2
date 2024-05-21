@@ -1,0 +1,51 @@
+@host = http://localhost:3000
+@contentType = application/json
+@JWTtoken = Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwZXNzb2FJZCI6IjY2NGJlZmQ4YmQ2ZDdmYmVmNDViMGMxZiIsImVtYWlsIjoiYmFzZWFkb0BnbWFpbC5jb20iLCJpYXQiOjE3MTYyNTI2NTksImV4cCI6MTcxNjI1NjI1OX0.McdlTf-2tJtOV4rArHnJeqOjA9_EgrNfG1a80yfAVv0
+
+### Criar nova leitura
+POST {{host}}/leituras
+Content-Type: {{contentType}}
+Authorization: {{JWTtoken}}
+
+{
+  "valor": 23.5,
+  "data": "2023-12-01T12:00:00Z",
+  "sensor": "601c1f8f8c862705c0a4d7e9"
+}
+
+###
+
+### Obter todas as leituras
+GET {{host}}/leitura
+Content-Type: {{contentType}}
+Authorization: {{JWTtoken}}
+
+###
+
+### Obter leitura específica por ID
+# Substitua {id} pelo ID real de uma leitura existente quando você estiver testando.
+GET {{host}}/leituras/{id}
+Content-Type: {{contentType}}
+Authorization: {{JWTtoken}}
+
+###
+
+### Atualizar leitura por ID
+# Substitua {id} pelo ID real de uma leitura existente quando você estiver testando.
+PUT {{host}}/leituras/{id}
+Content-Type: {{contentType}}
+Authorization: {{JWTtoken}}
+
+{
+  "valor": 25.0,
+  "data": "2023-12-01T12:00:00Z",
+  "sensor": "601c1f8f8c862705c0a4d7e9"
+}
+
+###
+
+### Deletar leitura por ID
+# Substitua {id} pelo ID real de uma leitura existente quando você estiver testando.
+DELETE {{host}}/leituras/{id}
+Content-Type: {{contentType}}
+Authorization: {{JWTtoken}}

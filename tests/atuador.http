@@ -1,0 +1,49 @@
+@host = http://localhost:3000
+@contentType = application/json
+@JWTtoken = Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwZXNzb2FJZCI6IjY2NGJlZmQ4YmQ2ZDdmYmVmNDViMGMxZiIsImVtYWlsIjoiYmFzZWFkb0BnbWFpbC5jb20iLCJpYXQiOjE3MTYyNTI2NTksImV4cCI6MTcxNjI1NjI1OX0.McdlTf-2tJtOV4rArHnJeqOjA9_EgrNfG1a80yfAVv0
+
+### Criar novo atuador
+POST {{host}}/atuador
+Content-Type: {{contentType}}
+Authorization: {{JWTtoken}}
+
+{
+  "nome": "Atuador 1",
+  "dispositivo": "601c1f8f8c862705c0a4d7e6"
+}
+
+###
+
+### Obter todos os atuador
+GET {{host}}/atuador
+Content-Type: {{contentType}}
+Authorization: {{JWTtoken}}
+
+###
+
+### Obter atuador específico por ID
+# Substitua {id} pelo ID real de um atuador existente quando você estiver testando.
+GET {{host}}/atuador/{id}
+Content-Type: {{contentType}}
+Authorization: {{JWTtoken}}
+
+###
+
+### Atualizar atuador por ID
+# Substitua {id} pelo ID real de um atuador existente quando você estiver testando.
+PUT {{host}}/atuador/{id}
+Content-Type: {{contentType}}
+Authorization: {{JWTtoken}}
+
+{
+  "nome": "Atuador 1 Atualizado",
+  "dispositivo": "601c1f8f8c862705c0a4d7e6"
+}
+
+###
+
+### Deletar atuador por ID
+# Substitua {id} pelo ID real de um atuador existente quando você estiver testando.
+DELETE {{host}}/atuador/{id}
+Content-Type: {{contentType}}
+Authorization: {{JWTtoken}}

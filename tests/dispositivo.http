@@ -1,0 +1,51 @@
+@host = http://localhost:3000
+@contentType = application/json
+@JWTtoken = Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwZXNzb2FJZCI6IjY2NGJlZmQ4YmQ2ZDdmYmVmNDViMGMxZiIsImVtYWlsIjoiYmFzZWFkb0BnbWFpbC5jb20iLCJpYXQiOjE3MTYyNTI2NTksImV4cCI6MTcxNjI1NjI1OX0.McdlTf-2tJtOV4rArHnJeqOjA9_EgrNfG1a80yfAVv0
+
+### Criar novo dispositivo
+POST {{host}}/dispositivo
+Content-Type: {{contentType}}
+Authorization: {{JWTtoken}}
+
+{
+  "nome": "Dispositivo 1",
+  "localizacao": "Sala 101",
+  "gateway": "601c1f8f8c862705c0a4d7e7"
+}
+
+###
+
+### Obter todos os dispositivo
+GET {{host}}/dispositivo
+Content-Type: {{contentType}}
+Authorization: {{JWTtoken}}
+
+###
+
+### Obter dispositivo específico por ID
+# Substitua {id} pelo ID real de um dispositivo existente quando você estiver testando.
+GET {{host}}/dispositivo/{id}
+Content-Type: {{contentType}}
+Authorization: {{JWTtoken}}
+
+###
+
+### Atualizar dispositivo por ID
+# Substitua {id} pelo ID real de um dispositivo existente quando você estiver testando.
+PUT {{host}}/dispositivo/{id}
+Content-Type: {{contentType}}
+Authorization: {{JWTtoken}}
+
+{
+  "nome": "Dispositivo 1 Atualizado",
+  "localizacao": "Sala 101",
+  "gateway": "601c1f8f8c862705c0a4d7e7"
+}
+
+###
+
+### Deletar dispositivo por ID
+# Substitua {id} pelo ID real de um dispositivo existente quando você estiver testando.
+DELETE {{host}}/dispositivo/{id}
+Content-Type: {{contentType}}
+Authorization: {{JWTtoken}}

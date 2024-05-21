@@ -1,0 +1,51 @@
+@host = http://localhost:3000
+@contentType = application/json
+@JWTtoken = Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwZXNzb2FJZCI6IjY2NGJlZmQ4YmQ2ZDdmYmVmNDViMGMxZiIsImVtYWlsIjoiYmFzZWFkb0BnbWFpbC5jb20iLCJpYXQiOjE3MTYyNTI2NTksImV4cCI6MTcxNjI1NjI1OX0.McdlTf-2tJtOV4rArHnJeqOjA9_EgrNfG1a80yfAVv0
+
+### Criar novo gateway
+POST {{host}}/gateway
+Content-Type: {{contentType}}
+Authorization: {{JWTtoken}}
+
+{
+  "descricao": "Gateway 1",
+  "endereco": "192.168.1.1",
+  "pessoa": "601c1f8f8c862705c0a4d7e8"
+}
+
+###
+
+### Obter todos os gateway
+GET {{host}}/gateway
+Content-Type: {{contentType}}
+Authorization: {{JWTtoken}}
+
+###
+
+### Obter gateway específico por ID
+# Substitua {id} pelo ID real de um gateway existente quando você estiver testando.
+GET {{host}}/gateway/{id}
+Content-Type: {{contentType}}
+Authorization: {{JWTtoken}}
+
+###
+
+### Atualizar gateway por ID
+# Substitua {id} pelo ID real de um gateway existente quando você estiver testando.
+PUT {{host}}/gateway/{id}
+Content-Type: {{contentType}}
+Authorization: {{JWTtoken}}
+
+{
+  "descricao": "Gateway 1 Atualizado",
+  "endereco": "192.168.1.1",
+  "pessoa": "601c1f8f8c862705c0a4d7e8"
+}
+
+###
+
+### Deletar gateway por ID
+# Substitua {id} pelo ID real de um gateway existente quando você estiver testando.
+DELETE {{host}}/gateway/{id}
+Content-Type: {{contentType}}
+Authorization: {{JWTtoken}}

@@ -1,0 +1,53 @@
+@host = http://localhost:3000
+@contentType = application/json
+@JWTtoken = Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwZXNzb2FJZCI6IjY2NGJlZmQ4YmQ2ZDdmYmVmNDViMGMxZiIsImVtYWlsIjoiYmFzZWFkb0BnbWFpbC5jb20iLCJpYXQiOjE3MTYyNTI2NTksImV4cCI6MTcxNjI1NjI1OX0.McdlTf-2tJtOV4rArHnJeqOjA9_EgrNfG1a80yfAVv0
+
+### Criar novo sensor
+POST {{host}}/sensor
+Content-Type: {{contentType}}
+Authorization: {{JWTtoken}}
+
+{
+  "nome": "Sensor 1",
+  "tipo": "Temperatura",
+  "ligado": true,
+  "dispositivo": "601c1f8f8c862705c0a4d7e6"
+}
+
+###
+
+### Obter todos os sensor
+GET {{host}}/sensor
+Content-Type: {{contentType}}
+Authorization: {{JWTtoken}}
+
+###
+
+### Obter sensor específico por ID
+# Substitua {id} pelo ID real de um sensor existente quando você estiver testando.
+GET {{host}}/sensor/{id}
+Content-Type: {{contentType}}
+Authorization: {{JWTtoken}}
+
+###
+
+### Atualizar sensor por ID
+# Substitua {id} pelo ID real de um sensor existente quando você estiver testando.
+PUT {{host}}/sensor/{id}
+Content-Type: {{contentType}}
+Authorization: {{JWTtoken}}
+
+{
+  "nome": "Sensor 1 Atualizado",
+  "tipo": "Temperatura",
+  "ligado": false,
+  "dispositivo": "601c1f8f8c862705c0a4d7e6"
+}
+
+###
+
+### Deletar sensor por ID
+# Substitua {id} pelo ID real de um sensor existente quando você estiver testando.
+DELETE {{host}}/sensor/{id}
+Content-Type: {{contentType}}
+Authorization: {{JWTtoken}}

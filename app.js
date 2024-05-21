@@ -5,6 +5,8 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 // Importação do mongoose
 const mongoose = require('mongoose');
+// Importação da rota de autenticação
+const authRoutes = require('./routes/auth');
 // Importação da rota de sensores
 const sensorRoutes = require('./routes/sensor');
 // Importação da rota de pessoas
@@ -24,7 +26,7 @@ var app = express();
 
 // Configuração do banco de dados
 mongoose
-  .connect("mongodb+srv://dbonfleur:kGEp2nUPe0eFEjxL@cluster0.rjj365z.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0", {})
+  .connect("mongodb+srv://mateusstamm:UkQ7mcJj61nPL4sa@cluster0.adh0f4c.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0", {})
   .then(() => {
     console.log("MongoDB conectado!");
   })
@@ -44,6 +46,9 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Definição dos rotas da aplicação
+app.use('/auth', authRoutes);
+app.use('/atuador', atuadorRoutes);
+app.use('/leitura', leituraRoutes);
 app.use('/sensor', sensorRoutes);
 app.use('/pessoa', pessoaRoutes);
 app.use('/gateway', gatewayRoutes);

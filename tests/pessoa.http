@@ -1,0 +1,52 @@
+@host = http://localhost:3000
+@contentType = application/json
+@JWTtoken = Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwZXNzb2FJZCI6IjY2NGJlZmQ4YmQ2ZDdmYmVmNDViMGMxZiIsImVtYWlsIjoiYmFzZWFkb0BnbWFpbC5jb20iLCJpYXQiOjE3MTYyNTI2NTksImV4cCI6MTcxNjI1NjI1OX0.McdlTf-2tJtOV4rArHnJeqOjA9_EgrNfG1a80yfAVv0
+
+### Criar nova pessoa
+POST {{host}}/pessoa
+Content-Type: {{contentType}}
+
+{
+  "nome": "João Silva",
+  "email": "joao.silva@email.com",
+  "senha": "minhasenha123"
+}
+
+###
+
+### Obter todas as pessoas
+GET {{host}}/pessoa
+Content-Type: {{contentType}}
+Authorization: {{JWTtoken}}
+
+###
+
+### Obter pessoa específica por ID
+# Substitua {id} pelo ID real de uma pessoa existente quando você estiver testando.
+GET {{host}}/pessoa/{id}
+Content-Type: {{contentType}}
+Authorization: Authorization: {{JWTtoken}}
+
+###
+
+### Atualizar pessoa por ID
+# Substitua {id} pelo ID real de uma pessoa existente quando você estiver testando.
+PUT {{host}}/pessoa/{id}
+Content-Type: {{contentType}}
+Authorization: Authorization: {{JWTtoken}}
+
+{
+  "nome": "João Silva Atualizado",
+  "email": "joao.silva@newemail.com",
+  "senha": "novasenha123"
+}
+
+###
+
+### Deletar pessoa por ID
+# Substitua {id} pelo ID real de uma pessoa existente quando você estiver testando.
+DELETE {{host}}/pessoa/{id}
+Content-Type: {{contentType}}
+Authorization: Authorization: {{JWTtoken}}
+
+###

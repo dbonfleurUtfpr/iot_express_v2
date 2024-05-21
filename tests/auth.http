@@ -1,0 +1,21 @@
+@host = http://localhost:3000
+@contentType = application/json
+
+### Login - Obter Token JWT
+POST {{host}}/auth/login
+Content-Type: {{contentType}}
+
+{
+  "email": "baseado@gmail.com",
+  "password": "crack123"
+}
+
+###
+
+### Verificar Token JWT
+# Use o token obtido no login para esta requisição
+GET {{host}}/auth/verify
+Content-Type: {{contentType}}
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwZXNzb2FJZCI6IjY2NGJlZmQ4YmQ2ZDdmYmVmNDViMGMxZiIsImVtYWlsIjoiYmFzZWFkb0BnbWFpbC5jb20iLCJpYXQiOjE3MTYyNTI2NTksImV4cCI6MTcxNjI1NjI1OX0.McdlTf-2tJtOV4rArHnJeqOjA9_EgrNfG1a80yfAVv0
+
+###
